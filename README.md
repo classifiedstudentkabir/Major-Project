@@ -11,5 +11,5 @@ Building a Major Porject with team on Civil Contractor website
 5. copy that folder and type " cd Major-Project " then it will open your terminal to that directory
 6. type " git status " to check in which branch your project is saved ( Mine is save in origin/main branch )
 7.  after that upload your files into the github by using terminal or using github on web to upload it in your folder
-8.  <h1>After someone uploaded there file into there folder but you clone this repo before they uploaded then how to get the latest updated repo</h1>
+8.  <h3>After someone uploaded there file into there folder but you clone this repo before they uploaded then how to get the latest updated repo</h3>
 9.  type " git pull origin main " any new uploaded file then come to your store folder and in your vs code
