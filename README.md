@@ -13,3 +13,13 @@ Building a Major Porject with team on Civil Contractor website
 7.  after that upload your files into the github by using terminal or using github on web to upload it in your folder
 8.  <h3>After someone uploaded there file into there folder but you clone this repo before they uploaded then how to get the latest updated repo</h3>
 9.  type " git pull origin main " any new uploaded file then come to your store folder and in your vs code
+
+### 👤 3. Set Your Git Identity (First Time Only)
+> ⚠️ Only needed the first time you use Git on your system.
+
+If you haven’t configured Git before, run the following commands:
+```bash or in same terminal type this 
+git config --global user.name "Your Full Name"
+git config --global user.email "your_github_email@example.com" 
+```
+You only need to do this once per computer — Git will remember it for all future repositories.
