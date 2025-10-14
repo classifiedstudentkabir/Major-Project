@@ -3,9 +3,8 @@ Building a Major Project with a team on a Civil Contractor website.
 
 ---
 
-### How to Clone This Project
-
-This guide assumes you are using Visual Studio Code and its integrated terminal.
+### How to clone this into your device editor app 
+- i am using Visual studio and cloning using terminal 
 
 1.  **Open VS Code and the Terminal:**
     * Close any open files.
@@ -14,7 +13,7 @@ This guide assumes you are using Visual Studio Code and its integrated terminal.
 2.  **Clone the Repository:**
     * In the terminal, run the following command to download the project:
         ```bash
-        git clone [https://github.com/classifiedstudentkabir/Major-Project.git](https://github.com/classifiedstudentkabir/Major-Project.git)
+        git clone https://github.com/classifiedstudentkabir/Major-Project.git
         ```
 
 3.  **Navigate to the Project Folder:**
@@ -22,6 +21,7 @@ This guide assumes you are using Visual Studio Code and its integrated terminal.
         ```bash
         cd Major-Project
         ```
+    * type ``` ls ``` to check where is your clone is saved
 
 4.  **Check Your Branch:**
     * Run `git status` to see your current branch. You should be on the `main` branch.
