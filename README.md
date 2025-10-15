@@ -12,7 +12,7 @@ Building a Major Porject with team on Civil Contractor website
 6. type ``` git status ``` to check in which branch your project is saved ( Mine is save in origin/main branch )
 7.  after that upload your files into the github by using terminal or using github on web to upload it in your folder
    <h3>After someone uploaded there file into there folder but you clone this repo before they uploaded then how to get the latest updated repo</h3>
-8.  type ``` git pull origin main ``` any new uploaded file then come to your store folder and in your vs code
+8.  type ```git pull origin main``` any new uploaded file then come to your store folder and in your vs code
    <h3>and if your wanna upload something which you change or did in your local pc ( like added new foler or file into your folder )</h3>
 9.  type ``` git push origin main ``` this will push the changes you did in your pc into the github repo
 
