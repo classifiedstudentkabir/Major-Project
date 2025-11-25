@@ -51,14 +51,7 @@ export default function Footer() {
               >
                 <i className="fab fa-instagram text-sidebar-foreground"></i>
               </a>
-              <a 
-                href="#" 
-                className="w-9 h-9 rounded-md bg-sidebar-accent flex items-center justify-center hover-elevate transition-all"
-                aria-label="LinkedIn"
-                data-testid="link-social-linkedin"
-              >
-                <i className="fab fa-linkedin-in text-sidebar-foreground"></i>
-              </a>
+              
             </div>
           </div>
 
@@ -123,21 +116,28 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <i className="fas fa-map-marker-alt text-primary mt-1"></i>
                 <span className="text-sidebar-foreground/70 font-[Inter] text-sm">
-                  Audet mahat dahik
+                  Shop No. 7, 8, 9, Parivartan CHS, Sector - 6A, 
+                  Opp. Saibaba Mandir, Kamothe, Navi mumbai
                 </span>
               </li>
               {/* Phone */}
               <li className="flex items-center gap-3">
                 <i className="fas fa-phone text-primary"></i>
                 <span className="text-sidebar-foreground/70 font-[Inter] text-sm">
-                  +915 7780 280 802
+                  Krishna: +91 9322874711
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="fas fa-phone text-primary"></i>
+                <span className="text-sidebar-foreground/70 font-[Inter] text-sm">
+                  Harish: +91 8898470483
                 </span>
               </li>
               {/* Email */}
               <li className="flex items-center gap-3">
                 <i className="fas fa-envelope text-primary"></i>
                 <span className="text-sidebar-foreground/70 font-[Inter] text-sm break-all">
-                  bvasari.delta@exasioprojs.com
+                  krishnaenterprises1001@gmail.com
                 </span>
               </li>
             </ul>

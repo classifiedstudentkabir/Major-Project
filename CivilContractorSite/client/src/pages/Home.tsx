@@ -83,7 +83,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold font-[Poppins] text-foreground mb-4">
-              WELCOME TO DELTA KRISHNA ENTERPRISES
+              WELCOME TO KRISHNA ENTERPRISES
             </h2>
             <p className="text-muted-foreground font-[Inter] text-base md:text-lg leading-relaxed mb-6">
               We are a leading civil contractor specializing in comprehensive construction solutions. 
@@ -241,7 +241,7 @@ export default function Home() {
               </Link>
               
               <div className="text-center text-muted-foreground font-[Inter] text-sm">
-                or call us at <span className="font-semibold text-foreground">+915 7780 280 802</span>
+                or call us at <span className="font-semibold text-foreground">+91 9322874711</span>
               </div>
             </div>
           </div>

@@ -241,7 +241,8 @@ export default function Contact() {
                     <div>
                       <p className="font-medium font-[Poppins] text-card-foreground mb-1">Address</p>
                       <p className="text-muted-foreground font-[Inter] text-sm">
-                        Audet mahat dahik
+                        Shop No. 7, 8, 9, Parivartan CHS, Sector - 6A, 
+                        Opp. Saibaba Mandir, Kamothe, Navi mumbai
                       </p>
                     </div>
                   </div>
@@ -254,7 +255,7 @@ export default function Contact() {
                     <div>
                       <p className="font-medium font-[Poppins] text-card-foreground mb-1">Phone</p>
                       <a href="tel:+9157780280802" className="text-primary font-[Inter] text-sm hover:underline">
-                        +915 7780 280 802
+                        Krishna: +91 9322874711
                       </a>
                     </div>
                   </div>
@@ -267,7 +268,7 @@ export default function Contact() {
                     <div>
                       <p className="font-medium font-[Poppins] text-card-foreground mb-1">Email</p>
                       <a href="mailto:bvasari.delta@exasioprojs.com" className="text-primary font-[Inter] text-sm hover:underline break-all">
-                        bvasari.delta@exasioprojs.com
+                        krishnaenterprises1001@gmail.com
                       </a>
                     </div>
                   </div>
@@ -279,7 +280,8 @@ export default function Contact() {
                 <CardHeader>
                   <CardTitle className="text-xl font-[Poppins] flex items-center gap-2">
                     <i className="fas fa-map text-primary"></i>
-                    Location Map
+                    Shop No. 7, 8, 9, Parivartan CHS, Sector - 6A, 
+                  Opp. Saibaba Mandir, Kamothe, Navi mumbai
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

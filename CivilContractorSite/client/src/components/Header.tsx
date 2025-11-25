@@ -116,7 +116,7 @@ export default function Header() {
               {/* Contact number in mobile menu */}
               <div className="flex items-center gap-2 px-4 py-2 text-sidebar-foreground sm:hidden">
                 <i className="fas fa-phone text-primary"></i>
-                <span className="font-[Inter] text-sm">+915 7780 280 802</span>
+                <span className="font-[Inter] text-sm">+91 9322874711</span>
               </div>
             </nav>
           </div>
