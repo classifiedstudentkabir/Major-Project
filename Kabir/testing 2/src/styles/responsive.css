@@ -1,0 +1,58 @@
+/* =========================================
+   5. RESPONSIVE UTILITIES
+   ========================================= */
+
+/* Tablet & Up (>= 768px) */
+@media (min-width: 768px) {
+    :root {
+        --container-padding: 2rem;
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols on tablet */
+    }
+
+    /* Layout adjustments */
+    .hero-content h1 {
+        font-size: var(--text-4xl);
+        /* Larger headlines */
+    }
+}
+
+/* Desktop & Up (>= 1024px) */
+@media (min-width: 1024px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .desktop-only {
+        display: block !important;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+
+    /* Complex Flex Layouts become rows */
+    .md-row {
+        flex-direction: row;
+    }
+
+    /* Reset auto margins */
+    .md-text-left {
+        text-align: left;
+    }
+}
+
+/* Large Desktop (>= 1280px) */
+@media (min-width: 1280px) {
+    :root {
+        --text-4xl: 3.815rem;
+        /* Even larger for hero */
+    }
+}

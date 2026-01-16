@@ -1,0 +1,66 @@
+/* =========================================
+   1. CSS VARIABLES (Design System Tokens)
+   ========================================= */
+:root {
+  /* COLORS */
+  /* Primary Palette */
+  --color-primary-dark: #0B1C39;  /* Deep Navy */
+  --color-accent: #FF6B35;        /* Vibrant Orange */
+  
+  /* Text Colors */
+  --color-text-body: #555555;     /* Neutral Grey */
+  --color-text-heading: #1A1A1A;  /* Almost Black */
+  --color-text-light: #FFFFFF;    /* White text for dark backgrounds */
+  
+  /* Backgrounds */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F8F9FA;      /* Light Grey for alternate sections */
+  --color-bg-dark: #0B1C39;       /* Same as primary dark */
+  
+  /* Borders & Dividers */
+  --color-border-light: #E5E5E5;
+
+  /* TYPOGRAPHY */
+  /* Fonts */
+  --font-heading: 'Merriweather', 'Playfair Display', serif; 
+  --font-body: 'Inter', 'Roboto', sans-serif;
+  
+  /* Font Sizes (Scale 1.250 - Major Third) */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.563rem;   /* 25px */
+  --text-2xl: 1.953rem;  /* 31px */
+  --text-3xl: 2.441rem;  /* 39px */
+  --text-4xl: 3.052rem;  /* 48px */
+  
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* SPACING SCALE (8px base) */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem;  /* 8px */
+  --spacing-md: 1rem;    /* 16px */
+  --spacing-lg: 1.5rem;  /* 24px */
+  --spacing-xl: 2rem;    /* 32px */
+  --spacing-2xl: 3rem;   /* 48px */
+  --spacing-3xl: 5rem;   /* 80px */
+  
+  /* LAYOUT */
+  --container-width-desktop: 1200px;
+  --container-padding: 1rem;
+  --header-height: 80px;
+  
+  /* BORDER RADIUS */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* SHADOWS */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-card: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-hover: 0 10px 15px rgba(0,0,0,0.1);
+}
