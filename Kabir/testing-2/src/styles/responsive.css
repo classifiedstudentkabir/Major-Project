@@ -76,9 +76,13 @@
         display: block;
     }
 
-    /* Show only first 3 items by default on mobile */
-    .main-nav ul li:nth-child(n + 4) {
+    /* Show only primary links by default on mobile */
+    .main-nav ul li {
         display: none;
+    }
+
+    .main-nav ul li.primary-link {
+        display: block;
     }
 
     .main-nav.is-open ul li {

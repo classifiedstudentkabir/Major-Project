@@ -61,9 +61,9 @@
 
             <nav class="main-nav desktop-only">
                 <ul class="flex gap-lg items-center">
-                    <li><a href="index.html" class="text-accent" data-i18n="nav.home">Home</a></li>
+                    <li class="primary-link"><a href="index.html" class="text-accent" data-i18n="nav.home">Home</a></li>
                     <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
-                    <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+                    <li class="primary-link"><a href="services.html" data-i18n="nav.services">Services</a></li>
                     <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0)" data-i18n="nav.pages">Pages</a>
@@ -106,7 +106,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
+                    <li class="primary-link"><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
                     <li><a href="blog.html" class="active text-accent" data-i18n="nav.blog">Blog</a></li>
                 </ul>
             </nav>
@@ -116,9 +116,12 @@
                     <option value="en">EN</option>
                     <option value="hi">HI</option>
                     <option value="mr">MR</option>
-                </select>
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
-
+                </select>
+
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+
+
                 <a href="contact.html" class="btn btn-primary" data-i18n="header.cta">Get Started</a>
             </div>
         </div>
@@ -241,12 +244,12 @@
                 <div>
                     <h4 style="color: #fff; margin-bottom: 20px;" data-i18n="footer.quick_links">Quick Links</h4>
                     <ul style="line-height: 2;">
-                        <li><a href="index.html" style="color: #bbb;" data-i18n="nav.home">Home</a></li>
+                        <li class="primary-link"><a href="index.html" style="color: #bbb;" data-i18n="nav.home">Home</a></li>
                         <li><a href="about.html" style="color: #bbb;" data-i18n="nav.about">About Us</a></li>
-                        <li><a href="services.html" style="color: #bbb;" data-i18n="nav.services">Services</a></li>
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;" data-i18n="nav.services">Services</a></li>
                         <li><a href="projects.html" style="color: #bbb;" data-i18n="nav.projects">Projects</a></li>
                         <li><a href="blog.html" style="color: #bbb;" data-i18n="nav.blog">Blog</a></li>
-                        <li><a href="contact.html" style="color: #bbb;" data-i18n="nav.contact">Contact Us</a></li>
+                        <li class="primary-link"><a href="contact.html" style="color: #bbb;" data-i18n="nav.contact">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -256,11 +259,11 @@
                     <ul style="line-height: 2;">
                         <li><a href="single-service.html" style="color: #bbb;" data-i18n="footer.service_civil">Civil
                                 Contracting</a></li>
-                        <li><a href="services.html" style="color: #bbb;"
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;"
                                 data-i18n="footer.service_fabrication">Fabrication Work</a></li>
-                        <li><a href="services.html" style="color: #bbb;" data-i18n="footer.service_interior">Interior
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;" data-i18n="footer.service_interior">Interior
                                 Design</a></li>
-                        <li><a href="services.html" style="color: #bbb;" data-i18n="footer.service_aluminium">Aluminium
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;" data-i18n="footer.service_aluminium">Aluminium
                                 Work</a></li>
                     </ul>
                 </div>
@@ -296,7 +299,8 @@
 
     <!-- Logic Scripts -->
     <script src="js/lang.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="js/nav.js"></script>
+
 </body>
 
 </html>
