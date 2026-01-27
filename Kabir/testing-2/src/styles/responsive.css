@@ -2,6 +2,82 @@
    5. RESPONSIVE UTILITIES
    ========================================= */
 
+/* Default visibility helpers */
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+/* Mobile First tweaks (<= 767px) */
+@media (max-width: 767px) {
+    :root {
+        --container-padding: 1rem;
+    }
+
+    .top-bar {
+        display: none;
+    }
+
+    .site-header {
+        height: auto;
+    }
+
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) 0;
+    }
+
+    .main-nav.desktop-only {
+        display: block;
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image-container {
+        margin-top: var(--spacing-xl);
+    }
+
+    .hero-badge-float {
+        position: static;
+        margin-top: var(--spacing-md);
+    }
+
+    .about-image-container,
+    .about-content,
+    .service-card,
+    .project-card,
+    .blog-card {
+        text-align: left;
+    }
+
+    .page-header {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
 /* Tablet & Up (>= 768px) */
 @media (min-width: 768px) {
     :root {
