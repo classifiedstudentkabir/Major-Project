@@ -65,6 +65,47 @@
         display: none;
     }
 
+    .main-nav.is-open .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 0;
+        margin-left: var(--spacing-md);
+        display: block;
+    }
+
+    /* Show only first 3 items by default on mobile */
+    .main-nav ul li:nth-child(n + 4) {
+        display: none;
+    }
+
+    .main-nav.is-open ul li {
+        display: block;
+    }
+
+    .main-nav.is-open ul li.dropdown {
+        display: block;
+    }
+
+    .mobile-menu-toggle {
+        border: 1px solid var(--color-border-light);
+        background: transparent;
+        padding: 8px 10px;
+        border-radius: var(--radius-sm);
+        display: inline-flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--color-primary-dark);
+    }
+
     .header-actions {
         width: 100%;
         display: flex;
