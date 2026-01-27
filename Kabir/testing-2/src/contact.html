@@ -180,7 +180,7 @@
                 style="background: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: var(--radius-md);">
                 <h3 style="margin-bottom: var(--spacing-lg);" data-i18n="contact_page.form_title">Send us a message</h3>
 
-                <form id="contact-form" onsubmit="event.preventDefault()">
+                <form id="contact-form">
                     <div class="form-group">
                         <label for="name" class="form-label" data-i18n="contact_page.form_name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -200,6 +200,7 @@
 
                     <button type="submit" class="btn btn-primary" style="width: 100%;"
                         data-i18n="contact_page.form_submit">Send Message</button>
+                    <p id="form-status" class="text-body" style="margin-top: var(--spacing-md);"></p>
                 </form>
             </div>
         </div>
@@ -292,7 +293,7 @@
 
     <!-- Logic Scripts -->
     <script src="js/lang.js"></script>
-    <!-- Placeholder for form.js in next steps -->
+    <script type="module" src="js/contact.js"></script>
 </body>
 
 </html>

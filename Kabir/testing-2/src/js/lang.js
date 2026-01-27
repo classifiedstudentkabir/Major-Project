@@ -73,8 +73,8 @@ const translationsFallback = {
         },
         "hero": {
             "subtitle": "Welcome to Krishna Enterprises",
-            "title": "Trust Us With The Reconstruction Of Your Building Project",
-            "description": "Lorem ipsum dolor sit amet consectetur. Blandit ultricies nullam ullamcorper arcu. Sit sit sapien nisi ac pulvinar cursus.",
+            "title": "Quality Civil & Interior Works For Your Home",
+            "description": "From steel grills to aluminium windows and custom furniture, we deliver dependable civil work with clean finishing.",
             "cta_primary": "Start Project",
             "cta_secondary": "Watch Video",
             "badge_number": "500+",
@@ -94,12 +94,12 @@ const translationsFallback = {
             "section_title": "Service",
             "headline": "Our Services For Your <br> Construction Needs",
             "description": "Lorem ipsum dolor sit amet consectetur. Blandit ultricies nullam ullamcorper arcu.",
-            "card1_title": "Building Design Concept",
-            "card1_desc": "Montes nisl Maecenas but this. Any till photography basketball as. Please cartoon sometimes propaganda.",
-            "card2_title": "Building Home Construction",
-            "card2_desc": "Montes nisl Maecenas but this. Any till photography basketball as. Please cartoon sometimes propaganda.",
-            "card3_title": "General Contracting",
-            "card3_desc": "Montes nisl Maecenas but this. Any till photography basketball as. Please cartoon sometimes propaganda."
+            "card1_title": "M.S. Fabrication",
+            "card1_desc": "Gates, grills, railings, and steel structural work with strong welds and clean finish.",
+            "card2_title": "Aluminium Works",
+            "card2_desc": "Sliding windows, partitions, and frames built for smooth function and durability.",
+            "card3_title": "Interior Decor & Furniture",
+            "card3_desc": "Custom furniture, polish, and painting that makes your home look finished."
         },
         "common": {
             "read_more": "Read More"
