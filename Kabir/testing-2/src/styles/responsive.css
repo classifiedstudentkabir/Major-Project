@@ -15,6 +15,9 @@
 @media (max-width: 767px) {
     :root {
         --container-padding: 1rem;
+        --text-4xl: 2.1rem;
+        --text-3xl: 1.7rem;
+        --text-2xl: 1.35rem;
     }
 
     .top-bar {
@@ -32,15 +35,34 @@
         padding: var(--spacing-md) 0;
     }
 
+    .logo img {
+        max-height: 42px;
+    }
+
     .main-nav.desktop-only {
         display: block;
         width: 100%;
     }
 
     .main-nav ul {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
         gap: var(--spacing-sm);
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .main-nav li {
+        width: 100%;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 6px 0;
+    }
+
+    .main-nav .dropdown-menu {
+        display: none;
     }
 
     .header-actions {
@@ -51,9 +73,29 @@
         flex-wrap: wrap;
     }
 
+    .header-actions .btn {
+        width: 100%;
+    }
+
+    .hero-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-content h1 {
+        font-size: var(--text-4xl);
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
     .hero-actions {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
     }
 
     .hero-image-container {
@@ -63,6 +105,7 @@
     .hero-badge-float {
         position: static;
         margin-top: var(--spacing-md);
+        width: fit-content;
     }
 
     .about-image-container,
@@ -75,6 +118,11 @@
 
     .page-header {
         padding: var(--spacing-2xl) 0;
+    }
+
+    .site-footer .container > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xl) !important;
     }
 }
 
