@@ -1,5 +1,7 @@
 # Major-Project
 Building a Major Project with a team on a Civil Contractor website.
+live preview is here 
+https://classifiedstudentkabir.github.io/Major-Project/
 
 ---
 
