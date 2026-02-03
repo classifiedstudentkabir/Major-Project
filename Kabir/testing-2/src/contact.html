@@ -45,7 +45,7 @@
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/919322874711" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -112,8 +112,10 @@
             </nav>
 
             <div class="header-actions flex items-center">
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
-
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+
+
                 <select id="lang-switcher" class="lang-switcher">
                     <option value="en">EN</option>
                     <option value="hi">HI</option>
@@ -156,8 +158,8 @@
                         <div class="contact-icon-box"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h4 style="margin-bottom: 5px;" data-i18n="contact_page.address_label">Address</h4>
-                            <p class="text-body" data-i18n="contact_page.address_value">Opp. Saibaba Mandir, Kamothe,
-                                Navi Mumbai</p>
+                            <p class="text-body" data-i18n="contact_page.address_value">Shop No. 7,8,9, Parivartan CHS.,
+                                Sector - 6A, Opp. Saibaba Mandir, Kamothe, Navi Mumbai</p>
                         </div>
                     </div>
 
@@ -199,6 +201,39 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service" class="form-label">Service Type</label>
+                        <select id="service" name="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="Civil Contracting">Civil Contracting</option>
+                            <option value="Fabrication Work">Fabrication Work</option>
+                            <option value="Interior Design">Interior Design</option>
+                            <option value="Aluminium Work">Aluminium Work</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteLocation" class="form-label">Site Location</label>
+                        <input type="text" id="siteLocation" name="siteLocation" class="form-control"
+                            placeholder="e.g., Kamothe, Navi Mumbai" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget" class="form-label">Budget Range</label>
+                        <select id="budget" name="budget" class="form-control">
+                            <option value="">Optional</option>
+                            <option value="Under 50k">Under 50k</option>
+                            <option value="50k - 2L">50k - 2L</option>
+                            <option value="2L - 10L">2L - 10L</option>
+                            <option value="10L+">10L+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="message" class="form-label" data-i18n="contact_page.form_message">Message</label>
                         <textarea id="message" name="message" class="form-control" placeholder="Your Message"
                             required></textarea>
@@ -212,13 +247,13 @@
         </div>
     </section>
 
-    <!-- Map Section Placeholder (Optional but common) -->
-    <div class="map-section"
-        style="height: 400px; background-color: #eee; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #888; text-align: center;">
-        <!-- Placeholder for generic Google Map embed -->
-        <i class="fas fa-map" style="font-size: 3rem; margin-bottom: 15px;"></i>
-        <span style="font-weight: bold; margin-bottom: 5px;">Google Map Placeholder</span>
-        <span style="color: var(--color-text-body);">Landmark: Opp. Saibaba Mandir</span>
+    <!-- Map Section -->
+    <div class="map-section" style="height: 400px;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.493922652251!2d73.0961799!3d19.0235502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9d0f5d92f59%3A0xae1962ea2e2d2e46!2sShree%20Saibaba%20Temple%2C%20kamothe!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
     <footer class="site-footer"
@@ -301,6 +336,13 @@
     <script src="js/lang.js"></script>
     <script type="module" src="js/contact.js"></script>
     <script src="js/nav.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a class="whatsapp-float"
+        href="https://wa.me/919322874711?text=Hi%20Krishna%20Enterprises%2C%20I%20want%20a%20quote." target="_blank"
+        rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 

@@ -3,5 +3,20 @@ node_modules/
 *.log
 __pycache__/
 .env
+.env.local
+.env.development
+.env.production
 *.zip
 
+# Firebase
+.firebase/
+.firebaserc.local
+
+# Build output
+dist/
+build/
+.next/
+
+# OS junk
+.DS_Store
+Thumbs.db
