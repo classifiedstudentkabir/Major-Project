@@ -63,3 +63,34 @@ The immediate goal is to prepare the codebase for a professional launch by enhan
 - Remove LinkedIn icon.
 - Optional: add favicon.
 - Optional: tighten Firestore rules to be spam-safe.
+
+## 6. Footer Upgrade + Mobile UI Improvement
+**Goal:** Enhance navigation and contact accessibility on mobile devices.
+
+### Footer Layout
+- [x] **Standardization:** Ensure footer is identical across all pages.
+- [x] **Social Icons:** Remove LinkedIn. Add/Ensure WhatsApp icon is present and functional.
+- [ ] **Copyright:** Ensure year is dynamic or set to 2026.
+
+### Footer Polish (Refinements)
+- [ ] **Alignment (Left Column):** Nudge social icons to visually align with the heading text "Krishna Enterprises".
+- [ ] **Spacing (Right Column):** Increase vertical gap between contact list items (Phone/Email) to 20px to match the overall footer rhythm.
+
+### Mobile UI Checklist
+- [ ] **Stacking:** Footer columns should stack vertically on mobile (< 768px).
+- [ ] **Spacing:** Add adequate padding between stacked elements to prevent accidental clicks.
+- [ ] **Tap Targets:** Ensure all links/buttons are at least 44x44px clickable area.
+- [ ] **Alignment:** Center-align text in footer on small screens for better readability.
+- [ ] **Overflow:** Check for horizontal scrolling issues (often caused by fixed-width elements).
+
+### Acceptance Criteria
+- Footer contains *only* Facebook, Instagram (if applicable), and WhatsApp. LinkedIn is gone.
+- WhatsApp link opens actual chat with pre-filled message.
+- No horizontal scrollbar on mobile (320px width test).
+- Footer text is readable and links are easily tappable on mobile.
+- Left column icons are visually flush with heading text.
+- Right column contact info has consistent 20px vertical spacing.
+
+### Risks & Verification
+- **Risk:** Modifying the footer in multiple HTML files might lead to inconsistencies if one is missed.
+- **Verification:** Manually check `index.html`, `about.html`, `contact.html` on mobile emulation.

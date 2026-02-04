@@ -1,7 +1,7 @@
 # AI Handoff Instructions
 **To:** Codex (Implementation Agent)
 **From:** Gemini (Planning Agent)
-**Date:** 2026-02-03
+**Date:** 2026-02-04
 
 ## Task 1: Refactor Contact Form Logic
 **Files:** `contact.html`, `js/contact.js`, `js/firebase.js`
@@ -119,3 +119,61 @@ const payload = {
   budget
 };
 ```
+
+## Task 5: Footer Upgrade & Mobile UI Improvements
+**To:** Codex (Implementation Agent)
+**Date:** 2026-02-04
+
+**Files:** All `.html` files (footer section), `styles/layout.css`, `styles/responsive.css`.
+
+**Instructions:**
+
+1.  **Footer Cleanup (All Pages):**
+    *   **Remove:** LinkedIn icon/link `<a>...<i class="fa-brands fa-linkedin-in">...</i></a>`.
+    *   **Add/Update:** WhatsApp link.
+        *   **URL:** `https://wa.me/919322874711?text=Hi%20Krishna%20Enterprises%2C%20I%20have%20a%20query`
+        *   **Attributes:** `target="_blank"`, `rel="noopener noreferrer"`, `aria-label="Chat on WhatsApp"`.
+    *   **Consolidate:** Ensure the footer HTML structure is consistent across `index.html`, `about.html`, `services.html`, etc.
+
+2.  **Mobile Styling (`styles/responsive.css`):**
+    *   **Breakpoints:** Focus on `@media (max-width: 768px)`.
+    *   **Footer Columns:** Ensure `.footer-col` (or equivalent) changes to `width: 100%` or `flex-direction: column`.
+    *   **Alignment:** `text-align: center` for footer content on mobile.
+    *   **Spacing:** Add `margin-bottom: 20px` to footer columns to separate them when stacked.
+    *   **Touch Targets:** Ensure links in the footer have `padding: 10px 0` or similar to meet 44px height requirement.
+
+3.  **Verification:**
+    *   Test standard viewport widths: 375px (iPhone SE), 414px (iPhone Max).
+    *   Ensure no horizontal overflow.
+
+## Task 6: Footer Polish (Alignment & Spacing Refinements)
+**To:** Codex (Implementation Agent)
+**Date:** 2026-02-04
+
+**Goal:** Minor CSS adjustments to improve visual alignment and vertical rhythm in the footer. **NO REDESIGN.**
+
+**CSS Fixes (Apply to `styles/layout.css`):**
+
+1.  **Left Column (Social Icons Alignment):**
+    ```css
+    .footer-social {
+        padding-left: 2px; /* Fix visual 'indent' caused by circular icons vs heading text start */
+    }
+    ```
+
+2.  **Right Column (Contact Info Spacing):**
+    *   Standardize vertical spacing for contact items to match the 20px margin used for headings/paragraphs.
+    ```css
+    .site-footer ul li[style*="display: flex"] {
+        margin-bottom: 20px !important;
+    }
+    ```
+    *Note: Using !important as these margins are currently inline in the HTML files.*
+
+3.  **Copyright Year:**
+    *   Update copyright year to `2026` across all HTML files if not already done.
+
+**Constraints:**
+- Do not change HTML structure.
+- Do not global-center elements.
+- Maintain consistent behavior across desktop and mobile.
