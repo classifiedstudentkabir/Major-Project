@@ -379,6 +379,57 @@ document.getElementById('formlock-toggle').addEventListener('change', async (e) 
     await updateSecuritySetting('formLocked', e.target.checked);
 });
 
+// ==================== CARD CLICK-TO-TOGGLE UX ====================
+function setupCardToggle(cardSelector, toggleId) {
+    const cards = document.querySelectorAll(cardSelector);
+    const toggle = document.getElementById(toggleId);
+
+    if (cards.length > 0 && toggle) {
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't toggle if user clicked directly on toggle switch or slider
+                if (e.target.closest('.toggle-switch')) {
+                    return;
+                }
+
+                // Don't toggle if user clicked on a link or button
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+                    return;
+                }
+
+                // Programmatically toggle the checkbox (this will trigger 'change' event)
+                toggle.checked = !toggle.checked;
+                toggle.dispatchEvent(new Event('change'));
+            });
+        });
+    }
+}
+
+// Initialize card click handlers for both controls
+// Using nth-child since both cards have same class
+const controlCards = document.querySelectorAll('.control-card');
+if (controlCards.length >= 2) {
+    // First card: Maintenance Mode
+    controlCards[0].addEventListener('click', (e) => {
+        if (e.target.closest('.toggle-switch') || e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            return;
+        }
+        const toggle = document.getElementById('maintenance-toggle');
+        toggle.checked = !toggle.checked;
+        toggle.dispatchEvent(new Event('change'));
+    });
+
+    // Second card: Form Lock
+    controlCards[1].addEventListener('click', (e) => {
+        if (e.target.closest('.toggle-switch') || e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            return;
+        }
+        const toggle = document.getElementById('formlock-toggle');
+        toggle.checked = !toggle.checked;
+        toggle.dispatchEvent(new Event('change'));
+    });
+}
+
 async function updateSecuritySetting(field, value) {
     try {
         const settingsRef = doc(db, 'settings', 'site');
