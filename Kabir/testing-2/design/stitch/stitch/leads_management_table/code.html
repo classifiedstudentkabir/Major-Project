@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leads Management - Krishna Enterprises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#197fe6",
+                "background-light": "#f6f7f8",
+                "background-dark": "#111921",
+                "surface-dark": "#1a242f",
+                "border-dark": "#2d3a4a",
+              },
+              fontFamily: {
+                "display": ["Lexend"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111921;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3a4a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #197fe6;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header / Navigation -->
+<header class="border-b border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark px-6 py-4 flex items-center justify-between sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-icons text-white">construction</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Krishna Enterprises</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold">Admin Dashboard</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-background-dark rounded-full border border-slate-200 dark:border-border-dark">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-xs font-medium">System Online</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-medium">Admin User</p>
+<p class="text-xs text-slate-500">Security Level: High</p>
+</div>
+<img alt="Profile" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="User profile portrait in circular frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJYDWXcO3Hzma5ZdgiAeYQPLaldX34xY80Dav_68vtb3Fqlf6MKLToCMEo8PAFSXovE3J5v8ruKLBA719ZfdZkxY3ifl5r67O0XlgrHnhlyTfPyHCjfUqOHt6Ti2BcAColPn1kQ0nFwxTskRpYpzj1QOoqF54hWyuEjy88H_yofwV3uvwwAJT_mxehTYP5_uvlVwpqMKf5-XevHj-Z0ppkuW0LYhfEBSnUIQz-JOFGxsWr-tEvdCoQPgRY4OSO9KJ_iPln5GNflPjk"/>
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 max-w-[1600px] mx-auto w-full">
+<!-- Page Title & Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
+<div>
+<h2 class="text-2xl font-bold">Leads Management</h2>
+<p class="text-slate-500 dark:text-slate-400">Track and manage service inquiries from all channels.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons text-sm">filter_list</span>
+<span class="text-sm font-medium">Advanced Filters</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+<span class="material-icons text-sm">file_download</span>
+<span class="text-sm font-medium">Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark p-4 mb-6 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<!-- Search -->
+<div class="relative flex-1">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-background-light dark:bg-background-dark border-transparent focus:border-primary focus:ring-1 focus:ring-primary rounded-lg text-sm transition-all" placeholder="Search leads by name, email, or service..." type="text"/>
+</div>
+<!-- Status Pills -->
+<div class="flex items-center gap-2 p-1 bg-background-light dark:bg-background-dark rounded-xl border border-slate-200 dark:border-border-dark">
+<button class="px-4 py-1.5 text-xs font-semibold rounded-lg bg-primary text-white">All Leads</button>
+<button class="px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-500 hover:text-primary transition-colors">New</button>
+<button class="px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-500 hover:text-primary transition-colors">Contacted</button>
+<button class="px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-500 hover:text-primary transition-colors">Closed</button>
+</div>
+<div class="flex items-center gap-2 text-slate-500 text-sm whitespace-nowrap">
+<span class="material-icons text-sm">history</span>
+                    Last updated: 5 mins ago
+                </div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-background-dark/50 border-b border-slate-200 dark:border-border-dark">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Time</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Lead Info</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Service &amp; Location</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Budget</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Message Preview</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-border-dark">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-sm font-medium">2 hours ago</span>
+<div class="text-[10px] text-slate-400 mt-0.5 uppercase">14 Oct, 09:45 AM</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Rahul Sharma</span>
+<div class="flex flex-col mt-1 space-y-0.5">
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">call</span>
+                                            +91 98765 43210
+                                        </div>
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">mail</span>
+                                            rahul.s@example.com
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Kitchen Renovation</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+<span class="material-icons text-[14px]">location_on</span>
+                                        Bandra, Mumbai
+                                    </div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">₹ 4,50,000</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-500 max-w-[200px] line-clamp-2 italic">"Looking to modernize my kitchen with new cabinets and marble flooring. Please contact..."</p>
+</td>
+<td class="px-6 py-4">
+<div class="relative inline-block text-left w-36">
+<select class="w-full pl-3 pr-10 py-1.5 text-xs font-semibold rounded-full border-none bg-primary/10 text-primary appearance-none cursor-pointer focus:ring-0">
+<option selected="">New</option>
+<option>Contacted</option>
+<option>Closed</option>
+</select>
+<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-icons text-xl">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-sm font-medium">5 hours ago</span>
+<div class="text-[10px] text-slate-400 mt-0.5 uppercase">14 Oct, 06:12 AM</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Priya Varma</span>
+<div class="flex flex-col mt-1 space-y-0.5">
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">call</span>
+                                            +91 91234 56789
+                                        </div>
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">mail</span>
+                                            priya.v@example.com
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Electrical Repair</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+<span class="material-icons text-[14px]">location_on</span>
+                                        Indiranagar, BLR
+                                    </div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">₹ 15,000</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-500 max-w-[200px] line-clamp-2 italic">"Frequent short circuits in the main board. Need urgent inspection for residential wiring."</p>
+</td>
+<td class="px-6 py-4">
+<div class="relative inline-block text-left w-36">
+<select class="w-full pl-3 pr-10 py-1.5 text-xs font-semibold rounded-full border-none bg-orange-500/10 text-orange-500 appearance-none cursor-pointer focus:ring-0">
+<option>New</option>
+<option selected="">Contacted</option>
+<option>Closed</option>
+</select>
+<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-icons text-xl">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-sm font-medium">1 day ago</span>
+<div class="text-[10px] text-slate-400 mt-0.5 uppercase">13 Oct, 03:20 PM</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Amit Patel</span>
+<div class="flex flex-col mt-1 space-y-0.5">
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">call</span>
+                                            +91 99887 76655
+                                        </div>
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">mail</span>
+                                            amit.patel@corp.com
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Office Painting</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+<span class="material-icons text-[14px]">location_on</span>
+                                        Hitech City, HYD
+                                    </div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">₹ 1,20,000</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-500 max-w-[200px] line-clamp-2 italic">"Full office repainting for 2500 sqft area. Modern finish, neutral colors preferred."</p>
+</td>
+<td class="px-6 py-4">
+<div class="relative inline-block text-left w-36">
+<select class="w-full pl-3 pr-10 py-1.5 text-xs font-semibold rounded-full border-none bg-green-500/10 text-green-500 appearance-none cursor-pointer focus:ring-0">
+<option>New</option>
+<option>Contacted</option>
+<option selected="">Closed</option>
+</select>
+<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-icons text-xl">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-sm font-medium">2 days ago</span>
+<div class="text-[10px] text-slate-400 mt-0.5 uppercase">12 Oct, 11:05 AM</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Suresh Iyer</span>
+<div class="flex flex-col mt-1 space-y-0.5">
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">call</span>
+                                            +91 94440 12345
+                                        </div>
+<div class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="material-icons text-[14px]">mail</span>
+                                            s.iyer@webmail.in
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Plumbing Installation</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+<span class="material-icons text-[14px]">location_on</span>
+                                        T-Nagar, Chennai
+                                    </div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">₹ 35,000</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-500 max-w-[200px] line-clamp-2 italic">"Need new bathroom fittings installed. Kohler or Jaguar products preferred."</p>
+</td>
+<td class="px-6 py-4">
+<div class="relative inline-block text-left w-36">
+<select class="w-full pl-3 pr-10 py-1.5 text-xs font-semibold rounded-full border-none bg-primary/10 text-primary appearance-none cursor-pointer focus:ring-0">
+<option selected="">New</option>
+<option>Contacted</option>
+<option>Closed</option>
+</select>
+<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-icons text-xl">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-slate-50 dark:bg-background-dark/30 border-t border-slate-200 dark:border-border-dark flex items-center justify-between">
+<span class="text-sm text-slate-500">Showing <span class="font-bold text-slate-900 dark:text-white">1 - 4</span> of 142 leads</span>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark text-slate-400 hover:text-primary disabled:opacity-50">
+<span class="material-icons">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-sm font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-sm font-bold hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-sm font-bold hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">3</button>
+<span class="text-slate-400 px-1">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded text-sm font-bold hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">12</button>
+<button class="p-1 rounded bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark text-slate-400 hover:text-primary">
+<span class="material-icons">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Summary Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Total Leads</span>
+<span class="material-icons text-primary bg-primary/10 p-1.5 rounded-lg text-lg">assessment</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">1,248</span>
+<span class="text-green-500 text-xs font-bold flex items-center pb-1">
+<span class="material-icons text-[14px]">arrow_upward</span>12%
+                    </span>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Unresolved</span>
+<span class="material-icons text-orange-500 bg-orange-500/10 p-1.5 rounded-lg text-lg">pending_actions</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">42</span>
+<span class="text-slate-400 text-xs font-medium pb-1">Needs Attention</span>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Conversion Rate</span>
+<span class="material-icons text-green-500 bg-green-500/10 p-1.5 rounded-lg text-lg">verified</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">24.5%</span>
+<span class="text-green-500 text-xs font-bold flex items-center pb-1">
+<span class="material-icons text-[14px]">arrow_upward</span>4%
+                    </span>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Avg. Budget</span>
+<span class="material-icons text-primary bg-primary/10 p-1.5 rounded-lg text-lg">payments</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">₹ 84K</span>
+<span class="text-slate-400 text-xs font-medium pb-1">Per Project</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Map/Location Glance (Floating Button for Interaction) -->
+<div class="fixed bottom-6 right-6 z-40">
+<button class="flex items-center gap-2 bg-slate-900 text-white dark:bg-primary px-5 py-3 rounded-full shadow-2xl shadow-primary/40 hover:scale-105 transition-transform">
+<span class="material-icons">map</span>
+<span class="font-bold text-sm tracking-wide">View Map View</span>
+</button>
+</div>
+<!-- Hidden Map Data placeholder -->
+<div class="hidden" data-location="India" style=""></div>
+</body></html>

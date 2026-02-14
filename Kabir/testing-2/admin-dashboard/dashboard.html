@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Krishna Enterprises Admin</title>
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-left">
+            <h1>Krishna Enterprises</h1>
+            <span class="admin-badge">Admin Panel</span>
+        </div>
+        <div class="header-right">
+            <span class="user-email" id="user-email">Loading...</span>
+            <button id="logout-btn" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="overview">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Overview</span>
+                </button>
+                <button class="nav-item" data-tab="leads">
+                    <i class="fas fa-users"></i>
+                    <span>Leads</span>
+                </button>
+                <button class="nav-item" data-tab="security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Security Controls</span>
+                </button>
+                <button class="nav-item" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Overview Tab -->
+            <section id="overview-tab" class="tab-content active">
+                <h2>Overview</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-leads">0</h3>
+                            <p>Total Leads</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="new-leads">0</h3>
+                            <p>New Leads</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="contacted-leads">0</h3>
+                            <p>Contacted</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="closed-leads">0</h3>
+                            <p>Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-leads">
+                    <h3>Recent Leads (Last 5)</h3>
+                    <div id="recent-leads-list" class="leads-preview">
+                        <p class="loading">Loading...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leads Tab -->
+            <section id="leads-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>Leads Management</h2>
+                    <button id="export-csv-btn" class="btn-primary">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                </div>
+
+                <div class="filters-bar">
+                    <input type="text" id="search-leads" placeholder="Search by name, email, phone..."
+                        class="search-input">
+
+                    <select id="status-filter" class="filter-select">
+                        <option value="all">All Status</option>
+                        <option value="new">New</option>
+                        <option value="contacted">Contacted</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table id="leads-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Service</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody">
+                            <tr>
+                                <td colspan="8" class="loading-row">Loading leads...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Security Controls Tab -->
+            <section id="security-tab" class="tab-content">
+                <h2>Security Controls</h2>
+
+                <div class="security-grid">
+                    <div class="control-card">
+                        <div class="control-header">
+                            <div>
+                                <h3>Maintenance Mode</h3>
+                                <p>Display maintenance banner on public site</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="maintenance-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-card">
+                        <div class="control-header">
+                            <div>
+                                <h3>Form Lock</h3>
+                                <p>Disable contact form submissions</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="formlock-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-metrics">
+                    <h3>Lead Submission Rate</h3>
+                    <div class="metric-card" id="submission-rate-card">
+                        <div class="metric-value" id="submissions-last-hour">0</div>
+                        <div class="metric-label">Submissions in last 60 minutes</div>
+                        <div id="rate-warning" class="rate-warning" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            High submission rate detected. Monitor for spam.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Tab -->
+            <section id="settings-tab" class="tab-content">
+                <h2>Settings</h2>
+
+                <div class="settings-section">
+                    <h3>Quick Links</h3>
+                    <div class="link-grid">
+                        <a href="https://console.firebase.google.com" target="_blank" class="link-card">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase Console</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://console.firebase.google.com/project/_/firestore" target="_blank"
+                            class="link-card">
+                            <i class="fas fa-database"></i>
+                            <span>Firestore Database</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://console.firebase.google.com/project/_/authentication/users" target="_blank"
+                            class="link-card">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Authentication</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Account</h3>
+                    <button id="logout-btn-settings" class="btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Lead Details Modal -->
+    <div id="lead-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Lead Details</h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+
+</html>

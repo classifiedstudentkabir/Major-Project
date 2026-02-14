@@ -21,9 +21,18 @@ body {
     font-family: var(--font-body);
     color: var(--color-text-body);
     background-color: var(--color-bg-white);
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+}
+
+/* Desktop override for body font */
+@media (min-width: 1024px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
 }
 
 /* Typography Defaults */

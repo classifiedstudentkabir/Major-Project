@@ -14,10 +14,11 @@
 /* Mobile First tweaks (<= 767px) */
 @media (max-width: 767px) {
     :root {
-        --container-padding: 1rem;
-        --text-4xl: 2.1rem;
-        --text-3xl: 1.7rem;
-        --text-2xl: 1.35rem;
+        --container-padding: 1.25rem;
+        --text-4xl: 2.2rem;
+        --text-3xl: 1.75rem;
+        --text-2xl: 1.4rem;
+        --text-xl: 1.2rem;
     }
 
     .top-bar {
@@ -26,29 +27,40 @@
 
     .site-header {
         height: auto;
+        padding: var(--spacing-sm) 0;
     }
 
     .site-header .container {
-        flex-direction: column;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
         gap: var(--spacing-md);
-        padding: var(--spacing-md) 0;
+        align-items: center;
+        padding: var(--spacing-sm) var(--container-padding);
+    }
+
+    .logo {
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .logo img {
-        max-height: 42px;
+        max-height: 45px;
     }
 
     .main-nav.desktop-only {
-        display: block;
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
         width: 100%;
     }
 
     .main-nav ul {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--spacing-sm);
-        font-size: 0.95rem;
+        gap: var(--spacing-md);
+        font-size: 1rem;
+        padding: var(--spacing-md) 0;
     }
 
     .main-nav li {
@@ -58,7 +70,10 @@
     .main-nav a {
         display: block;
         width: 100%;
-        padding: 6px 0;
+        padding: 12px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 
     .main-nav .dropdown-menu {
@@ -94,23 +109,52 @@
     }
 
     .mobile-menu-toggle {
-        border: 1px solid var(--color-border-light);
+        grid-column: 2;
+        grid-row: 1;
+        border: 2px solid var(--color-border-light);
         background: transparent;
-        padding: 8px 10px;
+        padding: 10px 12px;
         border-radius: var(--radius-sm);
         display: inline-flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 5px;
+        cursor: pointer;
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:focus {
+        background: var(--color-bg-light);
+        border-color: var(--color-accent);
     }
 
     .mobile-menu-toggle span {
         display: block;
-        width: 22px;
-        height: 2px;
+        width: 24px;
+        height: 3px;
         background: var(--color-primary-dark);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .mobile-menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
     }
 
     .header-actions {
+        grid-column: 1 / -1;
+        grid-row: 3;
         width: 100%;
         display: flex;
         gap: var(--spacing-sm);
@@ -120,6 +164,10 @@
 
     .header-actions .btn {
         width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-section {
@@ -165,9 +213,54 @@
         padding: var(--spacing-2xl) 0;
     }
 
-    .site-footer .container > div[style*="grid-template-columns"] {
+    .page-header h1 {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Section spacing improvements */
+    section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .service-card,
+    .project-card,
+    .blog-card {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Footer improvements */
+    .site-footer .container>div[style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
-        gap: var(--spacing-xl) !important;
+        gap: var(--spacing-2xl) !important;
+    }
+
+    .site-footer h4 {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .site-footer ul {
+        line-height: 2.2;
+    }
+
+    .site-footer .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .site-footer .footer-contact i {
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+
+    .site-footer .flex.gap-md {
+        justify-content: flex-start;
+        margin-left: 0;
+        gap: var(--spacing-lg);
     }
 }
 

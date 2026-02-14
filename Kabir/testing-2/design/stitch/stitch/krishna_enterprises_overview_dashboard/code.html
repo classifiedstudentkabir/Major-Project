@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Krishna Enterprises Overview Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "surface-dark": "#1a242d",
+                        "border-dark": "#2d3741",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .sidebar-item-active {
+            background-color: rgba(25, 127, 230, 0.1);
+            border-left: 4px solid #197fe6;
+            color: #197fe6;
+        }
+        .glass-panel {
+            background: rgba(26, 36, 45, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark flex flex-col fixed h-full">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-round">construction</span>
+</div>
+<h1 class="font-bold text-lg leading-tight tracking-tight">Krishna<br/><span class="text-primary">Enterprises</span></h1>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-icons-round">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-icons-round">people</span>
+<span class="font-medium">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-icons-round">security</span>
+<span class="font-medium">Security</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-icons-round">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-border-dark">
+<div class="bg-primary/10 p-4 rounded-xl">
+<p class="text-xs text-primary font-semibold uppercase tracking-wider mb-1">Support Plan</p>
+<p class="text-sm font-medium">Enterprise Admin</p>
+<div class="mt-3 w-full bg-primary/20 h-1.5 rounded-full">
+<div class="bg-primary h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 flex flex-col">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-border-dark bg-white/80 dark:bg-surface-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-semibold">Dashboard Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons-round">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:border-border-dark"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right">
+<p class="text-sm font-semibold">Admin User</p>
+<p class="text-xs text-slate-500">Super Administrator</p>
+</div>
+<img alt="Profile" class="w-10 h-10 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all" data-alt="Professional headshot of a business male administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbBGsXu9VCxqVEePsUgp88J639xjXE9-8hA8Hei4VV_BkHSmBVxWJVt5lv11kwprnTPdeX4Ry0gJ2CyFXFx5B5O1xf8ukE8vn1MNeb_JvThGD70BISCSudARTToc16O61BNurD7pv3XxAJBvWm-GzU7mEjMXeW3ccEza4H1AlDbzz8kvcfH_M_356naUD2-oc3IMatzkkJ1EcMipb20yqbDBcaK2pQSWc10GaLKNsQpV0AHk7VbadsTJEy1P5qFKg_-6guEbrTw8iy"/>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="p-8">
+<!-- Warning Banner -->
+<div class="mb-8 flex items-center justify-between bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl text-amber-600 dark:text-amber-400">
+<div class="flex items-center gap-3">
+<span class="material-icons-round">warning</span>
+<div>
+<p class="font-semibold">High submission rate detected</p>
+<p class="text-sm opacity-90">An unusual spike in contact form submissions was noted in the last 30 minutes.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-amber-500 text-white rounded-lg text-sm font-medium hover:bg-amber-600 transition-all">Investigate</button>
+<button class="px-4 py-2 text-sm font-medium hover:bg-white/10 rounded-lg transition-all">Dismiss</button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary bg-primary/10 p-2 rounded-lg">trending_up</span>
+<span class="text-xs font-bold text-emerald-500">+12%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Leads Today</p>
+<h3 class="text-3xl font-bold mt-1">24</h3>
+<p class="text-xs text-slate-400 mt-2">vs. 21 yesterday</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary bg-primary/10 p-2 rounded-lg">calendar_today</span>
+<span class="text-xs font-bold text-emerald-500">+5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Leads This Week</p>
+<h3 class="text-3xl font-bold mt-1">142</h3>
+<p class="text-xs text-slate-400 mt-2">Current billing cycle</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary bg-primary/10 p-2 rounded-lg">schedule</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Last Submission</p>
+<h3 class="text-xl font-bold mt-2">14 mins ago</h3>
+<p class="text-xs text-slate-400 mt-2">10:42 AM Today</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-emerald-500 bg-emerald-500/10 p-2 rounded-lg">check_circle</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">System Status</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-1 rounded text-xs font-bold">Maintenance OFF</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">All systems functional</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary bg-primary/10 p-2 rounded-lg">lock_open</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Contact Form</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">Unlocked</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Accepting new inquiries</p>
+</div>
+</div>
+<!-- Recent Activity Table Placeholder -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-border-dark flex items-center justify-between">
+<h4 class="font-bold text-lg">Recent Lead Inquiries</h4>
+<button class="text-primary text-sm font-semibold hover:underline">View All Leads</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">
+<th class="px-6 py-4 font-semibold">Client Name</th>
+<th class="px-6 py-4 font-semibold">Service Type</th>
+<th class="px-6 py-4 font-semibold">Contact Email</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-border-dark">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">Rahul Sharma</td>
+<td class="px-6 py-4">Electrical Installation</td>
+<td class="px-6 py-4 text-slate-500">rahul.s@example.com</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded text-xs font-semibold">New</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:text-primary/80"><span class="material-icons-round">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">Priya Patel</td>
+<td class="px-6 py-4">Plumbing Repair</td>
+<td class="px-6 py-4 text-slate-500">p.patel@web.in</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded text-xs font-semibold">Follow-up</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:text-primary/80"><span class="material-icons-round">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">Amit Singh</td>
+<td class="px-6 py-4">General Contracting</td>
+<td class="px-6 py-4 text-slate-500">amit_singh@domain.com</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded text-xs font-semibold">Contacted</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:text-primary/80"><span class="material-icons-round">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Dashboard Analytics Placeholder Image -->
+<div class="mt-8">
+<div class="relative rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark h-64">
+<img alt="Lead Analytics Graph" class="w-full h-full object-cover opacity-60 dark:opacity-40 grayscale" data-alt="Modern abstract business data analytics dashboard graph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT3E9s0f089KuP7Lcj3iNV9iplJ1hMWcEP8Z36e3Qfs4gZRjM0An3f5lf8d4fjKQZCM8I8PB4vxTIFdViVoh2_wN27puBUI3TAI7qm-O_JMu3x6wqbD7ySXSleezcpsZv9zsiZtVDFh57HOznWrByoN2KZ4V_f9nOSArcnTWvuY-9CssX4f4s0g3KIQGK4hh80Y963YBME-zmfohc9GEZ_wiqk-tjDSXCWhXVboFXwjzGo7uUwqo4py9sOL2sRZesJITZS4TjLA0Zk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent flex flex-col justify-end p-8">
+<h4 class="font-bold text-xl mb-1">Growth Trends</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Monthly lead generation visualized by category.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

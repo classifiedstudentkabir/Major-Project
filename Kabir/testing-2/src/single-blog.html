@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,7 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap"
         rel="stylesheet">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="an onymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -111,7 +111,20 @@
                 </ul>
             </nav>
 
-            <div class="header-actions flex items-center"><a href="contact.html" class="btn btn-primary" data-i18n="header.cta">Get Started</a>
+                        <div class="header-actions flex items-center">
+                <select id="lang-switcher" class="lang-switcher">
+                    <option value="en">EN</option>
+                    <option value="hi">HI</option>
+                    <option value="mr">MR</option>
+                </select>
+                
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="contact.html" class="btn btn-primary" data-i18n="header.cta">Get Started</a>
             </div>
         </div>
     </header>
@@ -301,4 +314,6 @@
 </body>
 
 </html>
+
+
 
