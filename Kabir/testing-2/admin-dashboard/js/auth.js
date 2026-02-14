@@ -90,3 +90,20 @@ function showError(message) {
     errorMessage.textContent = message;
     errorMessage.style.display = 'block';
 }
+
+// Password Toggle Logic
+const togglePasswordBtn = document.getElementById('toggle-password');
+if (togglePasswordBtn) {
+    togglePasswordBtn.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Toggle icon
+        const icon = togglePasswordBtn.querySelector('i');
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+
+        // Update aria-label
+        togglePasswordBtn.setAttribute('aria-label', type === 'password' ? 'Show password' : 'Hide password');
+    });
+}

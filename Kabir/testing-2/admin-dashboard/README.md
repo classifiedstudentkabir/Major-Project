@@ -92,7 +92,8 @@ cd admin-dashboard
 vercel --prod
 ```
 
-#### Option C: Local Testing
+#### Option C: Local Testing (REQUIRED)
+> **IMPORTANT:** You CANNOT run the dashboard by double-clicking index.html (file:// protocol) because Firebase Authentication will be blocked by CORS policy. You MUST use a local server.
 
 ```bash
 # Using Python
@@ -190,7 +191,7 @@ File naming: `leads_YYYY-MM-DD.csv`
 ### Updating Admin Email
 1. Open `js/firebase-config.js`
 2. Change `ADMIN_EMAIL` constant
-3. Create new user in Firebase Authentication with new email
+3. Create new user in Firebase Authentication with new email (`mytemporarygeneratedid2@gmail.com`)
 4. Redeploy dashboard
 
 ### Adding More Admins

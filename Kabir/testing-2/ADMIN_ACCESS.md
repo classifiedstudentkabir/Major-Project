@@ -11,13 +11,17 @@
 
 ## 🚀 Quick Start (Local Testing)
 
-### Method 1: Direct File Access
-1. Navigate to: `E:\Kabirji Folder\Project on github\Major-Project\Kabir\testing-2\admin-dashboard\`
-2. Double-click `index.html`
-3. Or paste this in your browser:
-   ```
-   file:///E:/Kabirji%20Folder/Project%20on%20github/Major-Project/Kabir/testing-2/admin-dashboard/index.html
-   ```
+### Method 1: Local Server (REQUIRED)
+> **IMPORTANT:** You CANNOT run the dashboard by double-clicking index.html (file:// protocol) because Firebase Authentication will be blocked by CORS policy. You MUST use a local server.
+
+```bash
+# Using Python
+cd "E:\Kabirji Folder\Project on github\Major-Project\Kabir\testing-2\admin-dashboard"
+python -m http.server 8080
+
+# Then open in browser:
+http://localhost:8080
+```
 
 ### Method 2: Local Server (Recommended)
 ```bash
@@ -47,7 +51,7 @@ http://localhost:8080
 2. Select your project
 3. Navigate to **Authentication** → **Users**
 4. Click **Add user**
-5. Email: `krishnaenterprises1001@gmail.com`
+5. Email: `mytemporarygeneratedid2@gmail.com`
 6. Set a strong password (save it securely!)
 7. Click **Add user**
 
@@ -107,7 +111,7 @@ http://localhost:8080
 
 **IMPORTANT:** The password is NOT stored anywhere in the code for security reasons.
 
-**Admin Email:** `krishnaenterprises1001@gmail.com` (hardcoded in `firebase-config.js`)
+**Admin Email:** `mytemporarygeneratedid2@gmail.com` (hardcoded in `firebase-config.js`)
 
 **Password:** You must create this when setting up the Firebase user (Step 1 above)
 

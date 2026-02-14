@@ -18,6 +18,20 @@ let currentUser = null;
 let allLeads = [];
 let filteredLeads = [];
 
+// ==================== SAFE HELPERS ====================
+function safeText(v) {
+    return String(v ?? "");
+}
+
+function escapeHtml(v) {
+    return safeText(v)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 // ==================== AUTH CHECK ====================
 onAuthStateChanged(auth, async (user) => {
     if (!user || user.email !== ADMIN_EMAIL) {
@@ -143,14 +157,22 @@ function renderLeadsTable() {
         return;
     }
 
-    tbody.innerHTML = filteredLeads.map(lead => `
+    tbody.innerHTML = filteredLeads.map(lead => {
+        // Field fallbacks for old/new docs
+        const name = lead.name ?? "";
+        const email = lead.email ?? "";
+        const phone = lead.phone ?? "";
+        const service = lead.service ?? "N/A";
+        const location = lead.siteLocation ?? lead.location ?? "N/A";
+
+        return `
         <tr>
             <td>${formatDate(lead.createdAt)}</td>
-            <td>${escapeHtml(lead.name)}</td>
-            <td>${escapeHtml(lead.email)}</td>
-            <td>${escapeHtml(lead.phone)}</td>
-            <td>${escapeHtml(lead.service || 'N/A')}</td>
-            <td>${escapeHtml(lead.siteLocation || 'N/A')}</td>
+            <td>${escapeHtml(name)}</td>
+            <td>${escapeHtml(email)}</td>
+            <td>${escapeHtml(phone)}</td>
+            <td>${escapeHtml(service)}</td>
+            <td>${escapeHtml(location)}</td>
             <td>
                 <select class="status-select" data-lead-id="${lead.id}" onchange="updateLeadStatus(this)">
                     <option value="new" ${(!lead.status || lead.status === 'new') ? 'selected' : ''}>New</option>
@@ -164,7 +186,8 @@ function renderLeadsTable() {
                 </button>
             </td>
         </tr>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Make functions globally available
@@ -203,35 +226,44 @@ window.viewLeadDetails = function (leadId) {
     const modal = document.getElementById('lead-modal');
     const modalBody = document.getElementById('modal-body');
 
+    // Field fallbacks for old/new docs
+    const name = lead.name ?? "";
+    const email = lead.email ?? "";
+    const phone = lead.phone ?? "";
+    const service = lead.service ?? "N/A";
+    const location = lead.siteLocation ?? lead.location ?? "N/A";
+    const budget = lead.budget ?? lead.budgetRange ?? "Not specified";
+    const message = lead.message ?? "N/A";
+
     modalBody.innerHTML = `
         <div class="lead-details">
             <div class="detail-row">
                 <strong>Name:</strong>
-                <span>${escapeHtml(lead.name)}</span>
+                <span>${escapeHtml(name)}</span>
             </div>
             <div class="detail-row">
                 <strong>Email:</strong>
-                <span>${escapeHtml(lead.email)}</span>
+                <span>${escapeHtml(email)}</span>
             </div>
             <div class="detail-row">
                 <strong>Phone:</strong>
-                <span>${escapeHtml(lead.phone)}</span>
+                <span>${escapeHtml(phone)}</span>
             </div>
             <div class="detail-row">
                 <strong>Service:</strong>
-                <span>${escapeHtml(lead.service || 'N/A')}</span>
+                <span>${escapeHtml(service)}</span>
             </div>
             <div class="detail-row">
                 <strong>Site Location:</strong>
-                <span>${escapeHtml(lead.siteLocation || 'N/A')}</span>
+                <span>${escapeHtml(location)}</span>
             </div>
             <div class="detail-row">
                 <strong>Budget:</strong>
-                <span>${escapeHtml(lead.budget || 'Not specified')}</span>
+                <span>${escapeHtml(budget)}</span>
             </div>
             <div class="detail-row">
                 <strong>Message:</strong>
-                <span>${escapeHtml(lead.message || 'N/A')}</span>
+                <span>${escapeHtml(message)}</span>
             </div>
             <div class="detail-row">
                 <strong>Submitted:</strong>
@@ -265,11 +297,17 @@ function applyFilters() {
     const statusFilter = document.getElementById('status-filter').value;
 
     filteredLeads = allLeads.filter(lead => {
+        // Safe field access for search
+        const name = safeText(lead.name).toLowerCase();
+        const email = safeText(lead.email).toLowerCase();
+        const phone = safeText(lead.phone).toLowerCase();
+        const location = safeText(lead.siteLocation ?? lead.location).toLowerCase();
+
         const matchesSearch =
-            lead.name.toLowerCase().includes(searchTerm) ||
-            lead.email.toLowerCase().includes(searchTerm) ||
-            lead.phone.toLowerCase().includes(searchTerm) ||
-            (lead.siteLocation && lead.siteLocation.toLowerCase().includes(searchTerm));
+            name.includes(searchTerm) ||
+            email.includes(searchTerm) ||
+            phone.includes(searchTerm) ||
+            location.includes(searchTerm);
 
         const matchesStatus =
             statusFilter === 'all' ||
@@ -392,16 +430,7 @@ function formatDate(timestamp) {
     });
 }
 
-function escapeHtml(text) {
-    const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    };
-    return text.replace(/[&<>"']/g, m => map[m]);
-}
+// Note: escapeHtml is now defined at the top with safeText helper
 
 function csvEscape(text) {
     if (!text) return '';

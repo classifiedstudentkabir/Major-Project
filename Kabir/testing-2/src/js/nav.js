@@ -14,6 +14,8 @@
         // Toggle display for mobile
         if (window.innerWidth <= 767) {
             nav.style.display = isOpen ? "block" : "none";
+            // Lock body scroll
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         }
     };
 
@@ -70,6 +72,7 @@
             toggle.classList.remove("is-active");
             toggle.setAttribute("aria-expanded", "false");
             nav.style.display = "";
+            document.body.style.overflow = ""; // Unlock scroll
         }
     });
 
