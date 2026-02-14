@@ -16,9 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langSwitcher) {
         langSwitcher.value = currentLang;
 
-        // 3. Listen for changes
+        // 3. Listen for changes (only real user interactions)
         langSwitcher.addEventListener('change', (e) => {
+            if (!e.isTrusted) {
+                const storedLang = localStorage.getItem('site_lang') || defaultLang;
+                langSwitcher.value = storedLang;
+                return;
+            }
+
             const selectedLang = e.target.value;
+            console.log(`User changed language to: ${selectedLang}`);
             setLanguage(selectedLang);
         });
     }

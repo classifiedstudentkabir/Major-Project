@@ -135,10 +135,16 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title" data-i18n="contact_page.title">Contact Us</h1>
-            <div class="breadcrumb">
-                <span data-i18n="nav.home">Home</span> &gt; <span class="text-accent"
-                    data-i18n="contact_page.title">Contact Us</span>
-            </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        <span class="text-accent" data-i18n="contact_page.title">Contact Us</span>
+                    </li>
+                </ol>
+            </nav>
         </div>
     </section>
 
@@ -149,8 +155,8 @@
             <div>
                 <span class="section-subtitle text-accent" data-i18n="contact_page.subtitle">Get In Touch</span>
                 <h2 style="margin-bottom: var(--spacing-xl);" data-i18n="contact_page.title">Contact Us</h2>
-                <p style="margin-bottom: var(--spacing-xl);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <p style="margin-bottom: var(--spacing-xl);" data-i18n="contact_page.intro">Share your requirements and
+                    site location. Our team will respond with the right guidance, timelines, and a detailed quote.</p>
 
                 <div class="contact-info-block">
                     <!-- Address -->

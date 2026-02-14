@@ -4,6 +4,11 @@
 **Tech Stack:** HTML5, CSS3, Vanilla JS, JSON (i18n)
 **Current Phase:** Pre-Launch Optimization (Vercel Preparation)
 
+## 0. Today's Focus (2026-02-14)
+- Content + layout + pages: breadcrumb fixes across all pages.
+- Content polish: replace lorem/placeholder copy across Home, About, Services, Projects, Blog, FAQ, Contact, and single pages via i18n updates.
+- Security: Firestore rules hardening for leads collection + deployment readiness files.
+
 ## 1. High-Level Strategy
 The immediate goal is to prepare the codebase for a professional launch by enhancing security, SEO, and maintainability without altering the visual design.
 
