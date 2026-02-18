@@ -3,6 +3,9 @@ Building a Major Project with a team on a Civil Contractor website.
 live preview is here 
 https://classifiedstudentkabir.github.io/Major-Project/
 
+https://civil-contractor-major-project.vercel.app/
+https://civil-contractor-major-project-admi.vercel.app/dashboard.html
+
 ---
 
 ### How to clone this into your device editor app 
