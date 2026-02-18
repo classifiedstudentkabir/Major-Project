@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Krishna Enterprises</title>
+    <meta name="description"
+        content="Welcome to Krishna Enterprises. We provide expert civil contracting, fabrication, aluminium work, and interior design services in Navi Mumbai.">
+
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="an onymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+
+            <div class="contact-info flex gap-lg items-center is-desktop-flex">
+                <div class="item flex items-center gap-sm">
+                    <i class="fas fa-phone-alt text-accent"></i>
+                    <span data-i18n="header.contact_phone">Call: +123 456 7890</span>
+                </div>
+                <div class="item flex items-center gap-sm">
+                    <i class="fas fa-envelope text-accent"></i>
+                    <span data-i18n="header.contact_email">info@example.com</span>
+                </div>
+            </div>
+            <div class="social-icons flex gap-md">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/919322874711" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpeg" alt="Krishna Enterprises" style="max-height: 50px;">
+                </a>
+            </div>
+
+            <nav class="main-nav desktop-only">
+                <ul class="flex gap-lg items-center">
+                    <li class="primary-link"><a href="index.html" class="active text-accent"
+                            data-i18n="nav.home">Home</a></li>
+                    <li class="primary-link"><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                    <li class="primary-link"><a href="services.html" data-i18n="nav.services">Services</a></li>
+                    <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" data-i18n="nav.pages">Pages</a>
+                        <ul class="dropdown-menu" style="min-width: 260px; padding: 10px 0;">
+                            <li>
+                                <a href="faq.html" style="padding: 10px 20px; display: block;">
+                                    <div class="text-accent"
+                                        style="font-weight: 700; font-size: 0.95rem; margin-bottom: 2px;"
+                                        data-i18n="nav.pages_faq_title">FAQ</div>
+                                    <div style="font-size: 0.8rem; color: #666; line-height: 1.3;"
+                                        data-i18n="nav.pages_faq_desc">Get answers to common queries</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single-service.html" style="padding: 10px 20px; display: block;">
+                                    <div class="text-accent"
+                                        style="font-weight: 700; font-size: 0.95rem; margin-bottom: 2px;"
+                                        data-i18n="nav.pages_civil_title">Civil Contracting</div>
+                                    <div style="font-size: 0.8rem; color: #666; line-height: 1.3;"
+                                        data-i18n="nav.pages_civil_desc">Expert construction services</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single-project.html" style="padding: 10px 20px; display: block;">
+                                    <div class="text-accent"
+                                        style="font-weight: 700; font-size: 0.95rem; margin-bottom: 2px;"
+                                        data-i18n="nav.pages_residential_title">Residential Complex</div>
+                                    <div style="font-size: 0.8rem; color: #666; line-height: 1.3;"
+                                        data-i18n="nav.pages_residential_desc">Explore modern living spaces</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single-blog.html" style="padding: 10px 20px; display: block;">
+                                    <div class="text-accent"
+                                        style="font-weight: 700; font-size: 0.95rem; margin-bottom: 2px;"
+                                        data-i18n="nav.pages_renovation_title">Home Renovation</div>
+                                    <div style="font-size: 0.8rem; color: #666; line-height: 1.3;"
+                                        data-i18n="nav.pages_renovation_desc">Tips for transforming your home</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="primary-link"><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
+                    <li class="primary-link"><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions flex items-center">
+                <select id="lang-switcher" class="lang-switcher">
+                    <option value="en">EN</option>
+                    <option value="hi">HI</option>
+                    <option value="mr">MR</option>
+                </select>
+
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle mobile-only" aria-expanded="false"
+                    aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="contact.html" class="btn btn-primary mobile-hide-cta" data-i18n="header.cta">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container grid grid-cols-2 items-center gap-2xl">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <span class="hero-subtitle text-accent" data-i18n="hero.subtitle">Navi Mumbai's Trusted Civil & Interior
+                    Contractor</span>
+                <h1 class="hero-title" data-i18n="hero.title">CRAFTING SPACES. FOUNDATION. BUILDING TOMORROW.
+                </h1>
+                <p class="hero-desc" data-i18n="hero.description">
+                    Dedicated to quality, reliability, and turning your vision into reality, Krishna Enterprises
+                    approaches every project with care and expertise—building trust as strong as our structures.
+                </p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary" data-i18n="hero.cta_primary">Get Started</a>
+                    <a href="#" class="btn btn-outline" data-i18n="hero.cta_secondary"><i
+                            class="fas fa-play icon-spacer"></i> Watch Video</a>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hero-image-container">
+                <img src="images/hero-workers.jpeg" alt="Civil Work Team">
+
+                <!-- Floating Badge -->
+                <div class="floating-badge hero-badge-float">
+                    <div class="icon-circle">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <div class="number text-accent text-2xl font-bold animated-counter"
+                            data-i18n="hero.badge_number" data-target="500">500+</div>
+                        <div class="badge-label" data-i18n="hero.badge_label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Teaser Section -->
+    <section class="about-section">
+        <div class="container grid grid-cols-2 gap-2xl items-center">
+            <!-- Left Image Group -->
+            <div class="about-image-container">
+                <img src="images/about-team.jpeg" alt="Krishna Enterprises Team">
+
+                <!-- Years Experience Badge -->
+                <div class="about-experience-badge">
+                    <div class="experience-number animated-counter" data-i18n="about.xp_number" data-target="15">15+
+                    </div>
+                    <div class="experience-label" data-i18n="about.xp_label">Years Experience</div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="about-content">
+                <span class="about-subtitle text-accent" data-i18n="about.section_title">Welcome To Krishna
+                    Enterprises</span>
+                <h2 data-i18n="about.headline">We Build Safe, Functional Spaces With Clean Finishes</h2>
+                <p data-i18n="about.description">
+                    Krishna Enterprises delivers civil contracting, fabrication, aluminium work, and interior solutions.
+                    We specialize in:
+                </p>
+                <ul class="about-list" style="margin-top: 15px; margin-bottom: 20px; color: var(--color-text-body);">
+                    <li><i class="fas fa-check-circle text-accent"></i> M.S. Fabrication</li>
+                    <li><i class="fas fa-check-circle text-accent"></i> Aluminium Works</li>
+                    <li><i class="fas fa-check-circle text-accent"></i> Interior Decorator Furniture</li>
+                    <li><i class="fas fa-check-circle text-accent"></i> Polish & Painting</li>
+                    <li><i class="fas fa-check-circle text-accent"></i> All Types of Civil Works</li>
+                </ul>
+
+                <div class="about-features-grid grid grid-cols-2 gap-md">
+                    <div class="about-feature">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <div>
+                            <h4 class="about-feature-title" data-i18n="about.feature1_title">Quality Craftsmanship</h4>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+                        <div>
+                            <h4 class="about-feature-title" data-i18n="about.feature2_title">Client-Centric Approach
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="about.html" class="btn btn-primary mt-xl" data-i18n="about.cta">About
+                    Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header flex justify-between items-center">
+                <div>
+                    <span class="section-subtitle text-accent" data-i18n="services.section_title">Services</span>
+                    <h2 data-i18n="services.headline">Civil & Interior Services for Homes and Businesses</h2>
+                </div>
+                <div class="service-header-desc">
+                    <p data-i18n="services.description">End-to-end contracting for residential, commercial, and society
+                        projects in Navi Mumbai.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-lg">
+                <!-- Card 1 -->
+                <div class="card-service">
+                    <div class="icon-box"><i class="fas fa-ruler-combined"></i></div>
+                    <h3 data-i18n="services.card1_title">Civil Contracting</h3>
+                    <p data-i18n="services.card1_desc">RCC work, masonry, plastering, waterproofing, and structural
+                        repairs.</p>
+                    <a href="services.html" class="read-more"><span data-i18n="common.read_more">Read More</span> <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-service">
+                    <div class="icon-box"><i class="fas fa-home"></i></div>
+                    <h3 data-i18n="services.card2_title">Fabrication & Railings</h3>
+                    <p data-i18n="services.card2_desc">MS gates, grills, stair railings, sheds, and custom metal
+                        fabrication.</p>
+                    <a href="services.html" class="read-more"><span data-i18n="common.read_more">Read More</span> <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-service">
+                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                    <h3 data-i18n="services.card3_title">Interiors & Aluminium</h3>
+                    <p data-i18n="services.card3_desc">Modular interiors, false ceiling, painting, and aluminium
+                        windows/partitions.</p>
+                    <a href="services.html" class="read-more"><span data-i18n="common.read_more">Read More</span> <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="site-footer"
+        style="background-color: #1a1a1a; color: #fff; padding-top: 60px; padding-bottom: 20px;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 40px;">
+                <!-- Section 1: About -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 20px;" data-i18n="footer.about_title">Krishna Enterprises
+                    </h4>
+                    <p style="color: #bbb; line-height: 1.6; margin-bottom: 20px;" data-i18n="footer.about_desc">Leading
+                        construction and interior design firm dedicated to quality and excellence.</p>
+                    <div class="flex gap-md" style="margin-left: 70px;">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919322874711?text=Hi%20Krishna%20Enterprises%2C%20I%20want%20a%20quote"
+                            class="text-white" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Section 2: Quick Links -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 20px;" data-i18n="footer.quick_links">Quick Links</h4>
+                    <ul style="line-height: 2;">
+                        <li class="primary-link"><a href="index.html" style="color: #bbb;" data-i18n="nav.home">Home</a>
+                        </li>
+                        <li class="primary-link"><a href="about.html" style="color: #bbb;" data-i18n="nav.about">About
+                                Us</a></li>
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;"
+                                data-i18n="nav.services">Services</a></li>
+                        <li><a href="projects.html" style="color: #bbb;" data-i18n="nav.projects">Projects</a></li>
+                        <li class="primary-link"><a href="blog.html" style="color: #bbb;" data-i18n="nav.blog">Blog</a>
+                        </li>
+                        <li class="primary-link"><a href="contact.html" style="color: #bbb;"
+                                data-i18n="nav.contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 3: Services -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 20px;" data-i18n="footer.services">Services</h4>
+                    <ul style="line-height: 2;">
+                        <li><a href="single-service.html" style="color: #bbb;" data-i18n="footer.service_civil">Civil
+                                Contracting</a></li>
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;"
+                                data-i18n="footer.service_fabrication">Fabrication Work</a></li>
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;"
+                                data-i18n="footer.service_interior">Interior
+                                Design</a></li>
+                        <li class="primary-link"><a href="services.html" style="color: #bbb;"
+                                data-i18n="footer.service_aluminium">Aluminium
+                                Work</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 4: Contact -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 20px;" data-i18n="footer.contact">Contact Info</h4>
+                    <ul class="footer-contact" style="line-height: 1.8;">
+                        <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                            <i class="fas fa-map-marker-alt"
+                                style="color: var(--color-primary); font-size: 16px; width: 18px; text-align: center;"></i>
+                            <span style="color: #bbb;">Opp. Saibaba Mandir, Kamothe, Navi Mumbai</span>
+                        </li>
+
+                        <li style="display: flex; align-items: center; gap: 30px; margin-bottom: 18px;">
+                            <i class="fas fa-phone-alt"
+                                style="color: var(--color-primary); font-size: 16px; width: 18px; text-align: center;"></i>
+                            <span style="color: #bbb;">+91 8898470483</span>
+                        </li>
+
+                        <li style="display: flex; align-items: center; gap: 32px; margin-bottom: 0;">
+                            <i class="fas fa-envelope"
+                                style="color: var(--color-primary); font-size: 16px; width: 18px; text-align: center;"></i>
+                            <span style="color: #bbb;">krishnaenterprises1001@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div style="border-top: 1px solid #333; padding-top: 20px; text-align: center;">
+                <p style="color: #777; margin: 0;" data-i18n="footer.copyright">&copy; 2026 Krishna Enterprises. All
+                    rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Logic Scripts -->
+    <script src="js/lang.js"></script>
+
+    <!-- Animated Counters Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.animated-counter');
+
+            const observerOptions = {
+                root: null,
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const suffix = counter.innerText.includes('+') ? '+' : ''; // Detect suffix if any, though we assume + based on design
+
+                        let count = 0;
+                        const duration = 2000; // 2 seconds
+                        const increment = target / (duration / 16); // 60fps
+
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count) + "+";
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                counter.innerText = target + "+";
+                            }
+                        };
+
+                        updateCount();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+    <script src="js/nav.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a class="whatsapp-float"
+        href="https://wa.me/919322874711?text=Hi%20Krishna%20Enterprises%2C%20I%20want%20a%20quote." target="_blank"
+        rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Maintenance Banner -->
+    <script type="module" src="js/maintenance.js"></script>
+
+</body>
+
+</html>
