@@ -4,7 +4,7 @@ live preview is here
 https://classifiedstudentkabir.github.io/Major-Project/
 
 https://civil-contractor-major-project.vercel.app/
-https://civil-contractor-major-project-admi.vercel.app/dashboard.html
+https://civil-contractor-major-project-admi.vercel.app/index.html
 
 ---
 
